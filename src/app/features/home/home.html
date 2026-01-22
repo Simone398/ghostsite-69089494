@@ -1,0 +1,134 @@
+<section class="hero">
+  <div class="hero-media" aria-hidden="true">
+    <picture>
+      <source
+        [attr.srcset]="heroImages.large"
+        media="(min-width: 768px)"
+      >
+      <img
+        [src]="heroImages.small"
+        [alt]="heroImages.alt"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </picture>
+  </div>
+  <div class="hero-content container">
+    <span class="badge">Niente e-commerce: ti aspettiamo in negozio</span>
+    <h1>Cibo di qualita per i tuoi animali, a due passi da casa</h1>
+    <p>
+      Selezioniamo alimenti affidabili e offriamo consulenza personalizzata per
+      cani, gatti, pappagalli e galline. La nostra forza e la vicinanza al
+      quartiere.
+    </p>
+    <div class="hero-cta">
+      <a class="btn btn--secondary" routerLink="/contatti">Vieni a trovarci</a>
+      <a class="btn btn--outline" routerLink="/prodotti">
+        Scopri i nostri prodotti
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <app-section-header
+      title="Perche scegliere il nostro negozio"
+      subtitle="Un punto di riferimento locale con attenzione reale alle esigenze del tuo animale."
+    ></app-section-header>
+    <div class="grid benefits-grid">
+      @for (benefit of benefits; track benefit.title) {
+        <app-info-card
+          [icon]="benefit.icon"
+          [title]="benefit.title"
+          [description]="benefit.description"
+        ></app-info-card>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section section--muted" id="prodotti-principali">
+  <div class="container">
+    <app-section-header
+      title="Prodotti principali"
+      subtitle="Il focus e sul cibo per cani, con una selezione curata anche per gli altri animali."
+    ></app-section-header>
+    <div class="grid product-grid">
+      @for (product of productHighlights; track product.title) {
+        <a
+          class="card-link"
+          [routerLink]="'/prodotti'"
+          [fragment]="product.fragment"
+        >
+          <app-product-card
+            [icon]="product.icon"
+            [title]="product.title"
+            [description]="product.description"
+            [benefits]="product.benefits"
+          ></app-product-card>
+        </a>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <app-section-header
+      title="Servizi aggiuntivi"
+      subtitle="Soluzioni pensate per semplificare la vita ai clienti locali."
+    ></app-section-header>
+    <div class="grid service-grid">
+      @for (service of services; track service.id) {
+        <app-service-card
+          [icon]="service.icon"
+          [title]="service.title"
+          [description]="service.description"
+          [benefit]="service.benefit"
+          [details]="service.details"
+        ></app-service-card>
+      }
+    </div>
+    <div class="section-actions">
+      <a class="btn btn--secondary" routerLink="/servizi">
+        Scopri tutti i servizi
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--muted">
+  <div class="container">
+    <app-section-header
+      title="Cosa dicono i nostri clienti"
+      subtitle="Esperienze reali di chi si affida a noi ogni giorno."
+      align="center"
+    ></app-section-header>
+    <div class="grid testimonial-grid">
+      @for (testimonial of testimonials; track testimonial.name) {
+        <app-testimonial-card
+          [quote]="testimonial.quote"
+          [name]="testimonial.name"
+          [pet]="testimonial.pet"
+        ></app-testimonial-card>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <app-cta-strip
+      title="Passa in negozio oggi"
+      [description]="
+        'Ci trovi in ' +
+        storeInfo.address +
+        '. Ti aspettiamo con una selezione ampia e consigli sinceri.'
+      "
+      buttonLabel="Apri in Google Maps"
+      [buttonLink]="storeInfo.mapLink"
+      [buttonExternal]="true"
+    ></app-cta-strip>
+  </div>
+</section>

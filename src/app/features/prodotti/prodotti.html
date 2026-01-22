@@ -1,0 +1,54 @@
+<section class="section">
+  <div class="container">
+    <app-section-header
+      title="I nostri prodotti"
+      subtitle="Questa pagina presenta le categorie principali. Per dettagli e disponibilita, passa in negozio o chiamaci."
+    ></app-section-header>
+    <nav class="category-tabs" aria-label="Categorie prodotti">
+      @for (item of navItems; track item.fragment) {
+        <a
+          class="tab"
+          [routerLink]="['/prodotti']"
+          [fragment]="item.fragment"
+        >
+          {{ item.label }}
+        </a>
+      }
+    </nav>
+  </div>
+</section>
+
+@for (category of categories; track category.id) {
+  <section class="section" [id]="category.id">
+    <div class="container">
+      <app-section-header
+        [title]="category.title"
+        [subtitle]="category.description"
+      ></app-section-header>
+      <div class="grid product-detail-grid">
+        @for (item of category.highlights; track item.title) {
+          <app-product-card
+            [icon]="item.icon"
+            [title]="item.title"
+            [description]="item.description"
+            [benefits]="item.benefits"
+          ></app-product-card>
+        }
+      </div>
+      <div class="category-cta">
+        <a class="btn btn--secondary" routerLink="/contatti">
+          Chiedi consiglio in negozio
+        </a>
+      </div>
+    </div>
+  </section>
+}
+
+<section class="section section--muted">
+  <div class="container">
+    <p class="note">
+      Questa non e una lista completa. Per scoprire tutti i prodotti
+      disponibili, passa a trovarci in negozio o contattaci.
+    </p>
+  </div>
+</section>

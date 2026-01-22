@@ -1,0 +1,100 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" routerLink="/">
+      <span class="logo-mark" aria-hidden="true">BP</span>
+      <span class="logo-text">{{ storeInfo.name }}</span>
+    </a>
+
+    <nav class="nav-desktop" aria-label="Navigazione principale">
+      @for (item of navItems; track item.label) {
+        <a
+          [routerLink]="item.path"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: item.path === '/' }"
+        >
+          {{ item.label }}
+        </a>
+      }
+    </nav>
+
+    <div class="header-actions">
+      <a class="contact-link" [href]="storeInfo.phoneHref">
+        <span aria-hidden="true">TEL</span>
+        <span class="contact-text">{{ storeInfo.phone }}</span>
+      </a>
+      <a
+        class="contact-link"
+        [href]="storeInfo.whatsappLink"
+        target="_blank"
+        rel="noopener"
+      >
+        <span aria-hidden="true">WA</span>
+        <span class="contact-text">WhatsApp</span>
+      </a>
+      <a class="contact-link" [href]="'mailto:' + storeInfo.email">
+        <span aria-hidden="true">MAIL</span>
+        <span class="contact-text">Email</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="menuOpen()"
+        aria-controls="mobile-menu"
+      >
+        <span class="sr-only">
+          {{ menuOpen() ? 'Chiudi menu' : 'Apri menu' }}
+        </span>
+        <span class="bar" [class.open]="menuOpen()"></span>
+        <span class="bar" [class.open]="menuOpen()"></span>
+        <span class="bar" [class.open]="menuOpen()"></span>
+      </button>
+    </div>
+  </div>
+
+  @if (menuOpen()) {
+    <button
+      type="button"
+      class="backdrop"
+      [@fadeBackdrop]
+      (click)="closeMenu()"
+      aria-label="Chiudi menu"
+    ></button>
+
+    <nav
+      id="mobile-menu"
+      class="nav-mobile"
+      [@slidePanel]
+      aria-label="Navigazione mobile"
+    >
+      <div class="nav-mobile__header">
+        <span class="logo-text">{{ storeInfo.name }}</span>
+        <button class="close-btn" type="button" (click)="closeMenu()">
+          Chiudi
+        </button>
+      </div>
+      @for (item of navItems; track item.label) {
+        <a
+          [routerLink]="item.path"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: item.path === '/' }"
+          (click)="closeMenu()"
+        >
+          {{ item.label }}
+        </a>
+      }
+
+      <div class="nav-mobile__contacts">
+        <a [href]="storeInfo.phoneHref">Chiama {{ storeInfo.phone }}</a>
+        <a [href]="storeInfo.whatsappLink" target="_blank" rel="noopener"
+          >Scrivici su WhatsApp</a
+        >
+        <a [href]="'mailto:' + storeInfo.email">Invia una email</a>
+        <a class="btn btn--secondary" routerLink="/contatti"
+          >Vieni a trovarci</a
+        >
+      </div>
+    </nav>
+  }
+</header>

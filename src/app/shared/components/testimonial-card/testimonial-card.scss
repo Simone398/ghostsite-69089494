@@ -1,0 +1,23 @@
+.testimonial-card {
+  margin: 0;
+  padding: 20px;
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  display: grid;
+  gap: 12px;
+}
+
+.testimonial-card blockquote {
+  margin: 0;
+  font-style: italic;
+  color: var(--color-dark);
+}
+
+.testimonial-card figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: var(--color-muted);
+}

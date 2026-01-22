@@ -1,0 +1,15 @@
+<a class="skip-link" href="#main-content">Salta al contenuto principale</a>
+
+<div class="app-root" [@.disabled]="reducedMotion()">
+  <app-site-header></app-site-header>
+
+  <div class="app-shell">
+    <main id="main-content" #mainContent>
+      <div class="route-container" [@routeAnimations]="prepareRoute(outlet)">
+        <router-outlet #outlet="outlet"></router-outlet>
+      </div>
+    </main>
+  </div>
+
+  <app-site-footer></app-site-footer>
+</div>
