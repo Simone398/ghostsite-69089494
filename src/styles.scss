@@ -40,6 +40,17 @@ body {
   line-height: 1.6;
 }
 
+h1,
+h2,
+h3 {
+  color: $color-dark;
+  line-height: 1.2;
+}
+
+p {
+  color: $color-dark;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -122,6 +133,11 @@ textarea {
   box-shadow: none;
 }
 
+.btn--outline:hover {
+  background: $color-dark;
+  color: $color-white;
+}
+
 .badge {
   display: inline-flex;
   align-items: center;
@@ -131,6 +147,7 @@ textarea {
   color: $color-dark;
   font-size: 0.85rem;
   font-weight: 700;
+  border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .skip-link {

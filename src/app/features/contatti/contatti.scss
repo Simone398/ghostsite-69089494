@@ -33,6 +33,18 @@
   gap: 8px;
 }
 
+.contact-links a {
+  color: var(--color-secondary);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(42, 157, 143, 0.45);
+  text-underline-offset: 3px;
+}
+
+.contact-links a:hover {
+  color: var(--color-dark);
+}
+
 @media (min-width: 768px) {
   .contact-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));

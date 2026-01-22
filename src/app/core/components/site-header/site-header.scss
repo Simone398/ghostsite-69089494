@@ -50,6 +50,10 @@
   color: var(--color-dark);
 }
 
+.nav-desktop a:hover {
+  color: var(--color-secondary);
+}
+
 .nav-desktop a.active::after {
   content: '';
   position: absolute;
@@ -72,6 +76,7 @@
   align-items: center;
   gap: 6px;
   font-size: 0.9rem;
+  font-weight: 600;
   padding: 6px 10px;
   border-radius: 999px;
   background: rgba(42, 157, 143, 0.12);
@@ -140,6 +145,7 @@
 .nav-mobile a {
   font-weight: 700;
   color: var(--color-dark);
+  padding: 6px 0;
 }
 
 .nav-mobile a.active {
@@ -166,6 +172,14 @@
   flex-direction: column;
   gap: 12px;
   font-size: 0.95rem;
+}
+
+.nav-mobile__contacts a {
+  color: var(--color-secondary);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(42, 157, 143, 0.45);
+  text-underline-offset: 3px;
 }
 
 @media (min-width: 768px) {

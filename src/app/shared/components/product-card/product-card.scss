@@ -18,14 +18,15 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgba(244, 162, 97, 0.2);
-  color: var(--color-dark);
+  background: rgba(244, 162, 97, 0.28);
+  color: #7a3f1a;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
+  letter-spacing: 0.04em;
   margin-bottom: 8px;
 }
 
