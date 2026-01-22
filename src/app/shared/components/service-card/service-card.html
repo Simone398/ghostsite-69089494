@@ -1,0 +1,18 @@
+<article class="service-card">
+  <div class="service-card__header">
+    <div class="service-card__icon" aria-hidden="true">{{ icon }}</div>
+    @if (badge) {
+      <span class="badge">{{ badge }}</span>
+    }
+  </div>
+  <h3>{{ title }}</h3>
+  <p>{{ description }}</p>
+  <p class="service-card__benefit">{{ benefit }}</p>
+  @if (details?.length) {
+    <ul>
+      @for (detail of details; track detail) {
+        <li>{{ detail }}</li>
+      }
+    </ul>
+  }
+</article>

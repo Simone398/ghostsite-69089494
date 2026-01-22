@@ -1,0 +1,12 @@
+<article class="info-card">
+  <div class="info-card__icon" aria-hidden="true">{{ icon }}</div>
+  <div class="info-card__content">
+    <div class="info-card__title">
+      <h3>{{ title }}</h3>
+      @if (badge) {
+        <span class="badge">{{ badge }}</span>
+      }
+    </div>
+    <p>{{ description }}</p>
+  </div>
+</article>

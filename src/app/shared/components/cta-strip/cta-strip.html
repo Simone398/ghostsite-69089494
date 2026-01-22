@@ -1,0 +1,17 @@
+<section class="cta-strip">
+  <div class="container cta-strip__inner">
+    <div>
+      <h2>{{ title }}</h2>
+      <p>{{ description }}</p>
+    </div>
+    @if (buttonExternal) {
+      <a class="btn btn--secondary" [href]="buttonLink" target="_blank" rel="noopener">
+        {{ buttonLabel }}
+      </a>
+    } @else {
+      <a class="btn btn--secondary" [routerLink]="buttonLink">
+        {{ buttonLabel }}
+      </a>
+    }
+  </div>
+</section>

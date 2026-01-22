@@ -1,0 +1,23 @@
+<section class="section">
+  <div class="container">
+    <app-section-header
+      title="Servizi aggiuntivi"
+      subtitle="Soluzioni pensate per facilitare la vita ai clienti locali."
+    ></app-section-header>
+    <div class="grid service-grid">
+      @for (service of services; track service.id) {
+        <app-service-card
+          [icon]="service.icon"
+          [title]="service.title"
+          [description]="service.description"
+          [benefit]="service.benefit"
+          [details]="service.details"
+          [badge]="service.status === 'in-arrivo' ? 'In arrivo' : undefined"
+        ></app-service-card>
+      }
+    </div>
+    <p class="disclaimer">
+      I servizi disponibili possono variare; per conferma contattaci direttamente.
+    </p>
+  </div>
+</section>

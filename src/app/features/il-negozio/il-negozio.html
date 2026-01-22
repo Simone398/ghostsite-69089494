@@ -1,0 +1,105 @@
+<section class="section">
+  <div class="container">
+    <app-section-header
+      title="Il nostro negozio di cibo per animali"
+      subtitle="Una realta locale costruita su fiducia, ascolto e passione per gli animali."
+    ></app-section-header>
+    <div class="intro-grid">
+      <div>
+        <p>
+          Bottega del Pet nasce per offrire un punto di riferimento in cui i proprietari di animali
+          possano trovare cibo di qualita e consigli pratici. Ogni giorno ascoltiamo le esigenze dei
+          nostri clienti e proponiamo soluzioni adatte a cani, gatti, pappagalli e galline.
+        </p>
+        <p>
+          Siamo un negozio di quartiere: la relazione personale conta quanto la selezione dei
+          prodotti. Qui trovi persone pronte a dedicarti tempo e attenzione.
+        </p>
+      </div>
+      <div class="intro-highlight">
+        <h3>Missione locale</h3>
+        <ul>
+          <li>Supporto quotidiano ai clienti del quartiere</li>
+          <li>Collaborazioni con fornitori affidabili</li>
+          <li>Focus sul benessere e sulla prevenzione</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--muted">
+  <div class="container">
+    <app-section-header
+      title="Il negozio in immagini"
+      subtitle="Un ambiente accogliente dove scegliere con calma."
+    ></app-section-header>
+    <div class="gallery-grid">
+      @for (image of galleryImages; track image.src) {
+        <button type="button" class="gallery-item" (click)="openLightbox(image)">
+          <img [src]="image.src" [alt]="image.alt" loading="lazy" />
+        </button>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="approach-grid">
+      <div>
+        <app-section-header title="Il nostro approccio"></app-section-header>
+        <ul class="checklist">
+          @for (point of approachPoints; track point) {
+            <li>{{ point }}</li>
+          }
+        </ul>
+      </div>
+      <div>
+        <app-section-header title="Per chi e il nostro negozio"></app-section-header>
+        <ul class="checklist">
+          @for (item of audience; track item) {
+            <li>{{ item }}</li>
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--muted">
+  <div class="container">
+    <app-section-header
+      title="Il team"
+      subtitle="Persone disponibili e competenti pronte ad aiutarti."
+    ></app-section-header>
+    <div class="team-grid">
+      @for (member of team; track member.name) {
+        <article class="team-card">
+          <h3>{{ member.name }}</h3>
+          <span class="team-role">{{ member.role }}</span>
+          <p>{{ member.bio }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+@if (selectedImage(); as image) {
+  <div
+    class="lightbox"
+    role="dialog"
+    aria-modal="true"
+    tabindex="0"
+    (click)="onLightboxClick($event)"
+    (keydown.escape)="closeLightbox()"
+    (keydown.enter)="closeLightbox()"
+    (keydown.space)="closeLightbox()"
+    @lightboxFade
+  >
+    <div class="lightbox-content">
+      <img [src]="image.src" [alt]="image.alt" />
+      <button type="button" class="btn btn--secondary" (click)="closeLightbox()">Chiudi</button>
+    </div>
+  </div>
+}

@@ -1,0 +1,33 @@
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <div class="logo">
+        <span class="logo-mark" aria-hidden="true">BP</span>
+        <span class="logo-text">{{ storeInfo.name }}</span>
+      </div>
+      <p class="footer-note">Sito vetrina - nessuna vendita online. Vieni a trovarci in negozio.</p>
+    </div>
+
+    <div class="footer-block">
+      <h3>Contatti</h3>
+      <p>{{ storeInfo.address }}</p>
+      <a [href]="storeInfo.phoneHref">Tel: {{ storeInfo.phone }}</a>
+      <a [href]="storeInfo.whatsappLink" target="_blank" rel="noopener"> WhatsApp </a>
+      <a [href]="'mailto:' + storeInfo.email">{{ storeInfo.email }}</a>
+    </div>
+
+    <div class="footer-block">
+      <h3>Link rapidi</h3>
+      @for (item of navItems; track item.label) {
+        <a [routerLink]="item.path">{{ item.label }}</a>
+      }
+      <a routerLink="/privacy">Privacy policy</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <span>(c) {{ year }} {{ storeInfo.name }}. Tutti i diritti riservati.</span>
+    </div>
+  </div>
+</footer>
