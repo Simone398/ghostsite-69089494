@@ -7,15 +7,13 @@
     <div class="intro-grid">
       <div>
         <p>
-          Bottega del Pet nasce per offrire un punto di riferimento in cui i
-          proprietari di animali possano trovare cibo di qualita e consigli
-          pratici. Ogni giorno ascoltiamo le esigenze dei nostri clienti e
-          proponiamo soluzioni adatte a cani, gatti, pappagalli e galline.
+          Bottega del Pet nasce per offrire un punto di riferimento in cui i proprietari di animali
+          possano trovare cibo di qualita e consigli pratici. Ogni giorno ascoltiamo le esigenze dei
+          nostri clienti e proponiamo soluzioni adatte a cani, gatti, pappagalli e galline.
         </p>
         <p>
-          Siamo un negozio di quartiere: la relazione personale conta quanto la
-          selezione dei prodotti. Qui trovi persone pronte a dedicarti tempo e
-          attenzione.
+          Siamo un negozio di quartiere: la relazione personale conta quanto la selezione dei
+          prodotti. Qui trovi persone pronte a dedicarti tempo e attenzione.
         </p>
       </div>
       <div class="intro-highlight">
@@ -38,11 +36,7 @@
     ></app-section-header>
     <div class="gallery-grid">
       @for (image of galleryImages; track image.src) {
-        <button
-          type="button"
-          class="gallery-item"
-          (click)="openLightbox(image)"
-        >
+        <button type="button" class="gallery-item" (click)="openLightbox(image)">
           <img [src]="image.src" [alt]="image.alt" loading="lazy" />
         </button>
       }
@@ -105,13 +99,7 @@
   >
     <div class="lightbox-content">
       <img [src]="image.src" [alt]="image.alt" />
-      <button
-        type="button"
-        class="btn btn--secondary"
-        (click)="closeLightbox()"
-      >
-        Chiudi
-      </button>
+      <button type="button" class="btn btn--secondary" (click)="closeLightbox()">Chiudi</button>
     </div>
   </div>
 }

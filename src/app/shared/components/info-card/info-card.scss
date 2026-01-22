@@ -6,7 +6,9 @@
   background: var(--color-white);
   box-shadow: var(--shadow-sm);
   border: 1px solid rgba(0, 0, 0, 0.05);
-  transition: transform 200ms ease, box-shadow 200ms ease;
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease;
 }
 
 .info-card:hover {

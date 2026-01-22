@@ -96,7 +96,9 @@
   width: 22px;
   height: 2px;
   background: var(--color-dark);
-  transition: transform 200ms ease, opacity 200ms ease;
+  transition:
+    transform 200ms ease,
+    opacity 200ms ease;
 }
 
 .menu-toggle .bar.open:nth-child(1) {

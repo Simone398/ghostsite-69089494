@@ -5,12 +5,7 @@
       <p>{{ description }}</p>
     </div>
     @if (buttonExternal) {
-      <a
-        class="btn btn--secondary"
-        [href]="buttonLink"
-        target="_blank"
-        rel="noopener"
-      >
+      <a class="btn btn--secondary" [href]="buttonLink" target="_blank" rel="noopener">
         {{ buttonLabel }}
       </a>
     } @else {

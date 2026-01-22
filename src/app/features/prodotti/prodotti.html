@@ -6,11 +6,7 @@
     ></app-section-header>
     <nav class="category-tabs" aria-label="Categorie prodotti">
       @for (item of navItems; track item.fragment) {
-        <a
-          class="tab"
-          [routerLink]="['/prodotti']"
-          [fragment]="item.fragment"
-        >
+        <a class="tab" [routerLink]="['/prodotti']" [fragment]="item.fragment">
           {{ item.label }}
         </a>
       }
@@ -36,9 +32,7 @@
         }
       </div>
       <div class="category-cta">
-        <a class="btn btn--secondary" routerLink="/contatti">
-          Chiedi consiglio in negozio
-        </a>
+        <a class="btn btn--secondary" routerLink="/contatti"> Chiedi consiglio in negozio </a>
       </div>
     </div>
   </section>
@@ -47,8 +41,8 @@
 <section class="section section--muted">
   <div class="container">
     <p class="note">
-      Questa non e una lista completa. Per scoprire tutti i prodotti
-      disponibili, passa a trovarci in negozio o contattaci.
+      Questa non e una lista completa. Per scoprire tutti i prodotti disponibili, passa a trovarci
+      in negozio o contattaci.
     </p>
   </div>
 </section>

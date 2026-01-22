@@ -4,7 +4,9 @@
   background: var(--color-white);
   border: 1px solid rgba(0, 0, 0, 0.06);
   box-shadow: var(--shadow-sm);
-  transition: transform 200ms ease, box-shadow 200ms ease;
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease;
 }
 
 .product-card:hover {

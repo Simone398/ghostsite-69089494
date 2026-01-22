@@ -1,13 +1,7 @@
 <form class="contact-form" [formGroup]="form" (ngSubmit)="submit()" novalidate>
   <div class="field">
     <label for="contact-name">Nome *</label>
-    <input
-      id="contact-name"
-      type="text"
-      formControlName="name"
-      autocomplete="name"
-      required
-    >
+    <input id="contact-name" type="text" formControlName="name" autocomplete="name" required />
     @if (controlInvalid('name')) {
       <small>Inserisci il tuo nome.</small>
     }
@@ -15,13 +9,7 @@
 
   <div class="field">
     <label for="contact-email">Email *</label>
-    <input
-      id="contact-email"
-      type="email"
-      formControlName="email"
-      autocomplete="email"
-      required
-    >
+    <input id="contact-email" type="email" formControlName="email" autocomplete="email" required />
     @if (controlInvalid('email')) {
       <small>Inserisci un indirizzo email valido.</small>
     }
@@ -29,22 +17,12 @@
 
   <div class="field">
     <label for="contact-phone">Telefono (opzionale)</label>
-    <input
-      id="contact-phone"
-      type="tel"
-      formControlName="phone"
-      autocomplete="tel"
-    >
+    <input id="contact-phone" type="tel" formControlName="phone" autocomplete="tel" />
   </div>
 
   <div class="field">
     <label for="contact-message">Messaggio *</label>
-    <textarea
-      id="contact-message"
-      rows="4"
-      formControlName="message"
-      required
-    ></textarea>
+    <textarea id="contact-message" rows="4" formControlName="message" required></textarea>
     @if (controlInvalid('message')) {
       <small>Scrivi un messaggio di almeno 10 caratteri.</small>
     }
@@ -59,8 +37,7 @@
   </button>
 
   <p class="form-note">
-    Questo modulo e dimostrativo; per richieste urgenti chiamaci o scrivici su
-    WhatsApp.
+    Questo modulo e dimostrativo; per richieste urgenti chiamaci o scrivici su WhatsApp.
   </p>
 
   @if (status() === 'success') {

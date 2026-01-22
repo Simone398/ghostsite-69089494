@@ -5,18 +5,14 @@
         <span class="logo-mark" aria-hidden="true">BP</span>
         <span class="logo-text">{{ storeInfo.name }}</span>
       </div>
-      <p class="footer-note">
-        Sito vetrina - nessuna vendita online. Vieni a trovarci in negozio.
-      </p>
+      <p class="footer-note">Sito vetrina - nessuna vendita online. Vieni a trovarci in negozio.</p>
     </div>
 
     <div class="footer-block">
       <h3>Contatti</h3>
       <p>{{ storeInfo.address }}</p>
       <a [href]="storeInfo.phoneHref">Tel: {{ storeInfo.phone }}</a>
-      <a [href]="storeInfo.whatsappLink" target="_blank" rel="noopener">
-        WhatsApp
-      </a>
+      <a [href]="storeInfo.whatsappLink" target="_blank" rel="noopener"> WhatsApp </a>
       <a [href]="'mailto:' + storeInfo.email">{{ storeInfo.email }}</a>
     </div>
 

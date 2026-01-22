@@ -22,12 +22,7 @@
         <span aria-hidden="true">TEL</span>
         <span class="contact-text">{{ storeInfo.phone }}</span>
       </a>
-      <a
-        class="contact-link"
-        [href]="storeInfo.whatsappLink"
-        target="_blank"
-        rel="noopener"
-      >
+      <a class="contact-link" [href]="storeInfo.whatsappLink" target="_blank" rel="noopener">
         <span aria-hidden="true">WA</span>
         <span class="contact-text">WhatsApp</span>
       </a>
@@ -62,17 +57,10 @@
       aria-label="Chiudi menu"
     ></button>
 
-    <nav
-      id="mobile-menu"
-      class="nav-mobile"
-      [@slidePanel]
-      aria-label="Navigazione mobile"
-    >
+    <nav id="mobile-menu" class="nav-mobile" [@slidePanel] aria-label="Navigazione mobile">
       <div class="nav-mobile__header">
         <span class="logo-text">{{ storeInfo.name }}</span>
-        <button class="close-btn" type="button" (click)="closeMenu()">
-          Chiudi
-        </button>
+        <button class="close-btn" type="button" (click)="closeMenu()">Chiudi</button>
       </div>
       @for (item of navItems; track item.label) {
         <a
@@ -87,13 +75,9 @@
 
       <div class="nav-mobile__contacts">
         <a [href]="storeInfo.phoneHref">Chiama {{ storeInfo.phone }}</a>
-        <a [href]="storeInfo.whatsappLink" target="_blank" rel="noopener"
-          >Scrivici su WhatsApp</a
-        >
+        <a [href]="storeInfo.whatsappLink" target="_blank" rel="noopener">Scrivici su WhatsApp</a>
         <a [href]="'mailto:' + storeInfo.email">Invia una email</a>
-        <a class="btn btn--secondary" routerLink="/contatti"
-          >Vieni a trovarci</a
-        >
+        <a class="btn btn--secondary" routerLink="/contatti">Vieni a trovarci</a>
       </div>
     </nav>
   }

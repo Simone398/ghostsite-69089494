@@ -19,7 +19,7 @@ export class ContactService {
           return throwError(() => new Error('Simulazione errore invio contatto'));
         }
 
-        return of('success');
+        return of<'success'>('success');
       }),
     );
   }

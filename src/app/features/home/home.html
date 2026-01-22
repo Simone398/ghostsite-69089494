@@ -1,31 +1,20 @@
 <section class="hero">
   <div class="hero-media" aria-hidden="true">
     <picture>
-      <source
-        [attr.srcset]="heroImages.large"
-        media="(min-width: 768px)"
-      >
-      <img
-        [src]="heroImages.small"
-        [alt]="heroImages.alt"
-        loading="eager"
-        fetchpriority="high"
-      />
+      <source [attr.srcset]="heroImages.large" media="(min-width: 768px)" />
+      <img [src]="heroImages.small" [alt]="heroImages.alt" loading="eager" fetchpriority="high" />
     </picture>
   </div>
   <div class="hero-content container">
     <span class="badge">Niente e-commerce: ti aspettiamo in negozio</span>
     <h1>Cibo di qualita per i tuoi animali, a due passi da casa</h1>
     <p>
-      Selezioniamo alimenti affidabili e offriamo consulenza personalizzata per
-      cani, gatti, pappagalli e galline. La nostra forza e la vicinanza al
-      quartiere.
+      Selezioniamo alimenti affidabili e offriamo consulenza personalizzata per cani, gatti,
+      pappagalli e galline. La nostra forza e la vicinanza al quartiere.
     </p>
     <div class="hero-cta">
       <a class="btn btn--secondary" routerLink="/contatti">Vieni a trovarci</a>
-      <a class="btn btn--outline" routerLink="/prodotti">
-        Scopri i nostri prodotti
-      </a>
+      <a class="btn btn--outline" routerLink="/prodotti"> Scopri i nostri prodotti </a>
     </div>
   </div>
 </section>
@@ -56,11 +45,7 @@
     ></app-section-header>
     <div class="grid product-grid">
       @for (product of productHighlights; track product.title) {
-        <a
-          class="card-link"
-          [routerLink]="'/prodotti'"
-          [fragment]="product.fragment"
-        >
+        <a class="card-link" [routerLink]="'/prodotti'" [fragment]="product.fragment">
           <app-product-card
             [icon]="product.icon"
             [title]="product.title"
@@ -91,9 +76,7 @@
       }
     </div>
     <div class="section-actions">
-      <a class="btn btn--secondary" routerLink="/servizi">
-        Scopri tutti i servizi
-      </a>
+      <a class="btn btn--secondary" routerLink="/servizi"> Scopri tutti i servizi </a>
     </div>
   </div>
 </section>

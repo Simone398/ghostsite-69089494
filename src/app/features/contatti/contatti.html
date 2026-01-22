@@ -8,12 +8,7 @@
       <div class="contact-info">
         <h3>Indirizzo</h3>
         <p>{{ storeInfo.address }}</p>
-        <a
-          class="btn btn--secondary"
-          [href]="storeInfo.mapLink"
-          target="_blank"
-          rel="noopener"
-        >
+        <a class="btn btn--secondary" [href]="storeInfo.mapLink" target="_blank" rel="noopener">
           Apri in Google Maps
         </a>
         <div class="map-embed" id="mappa">
@@ -40,9 +35,7 @@
         <h3>Contatti rapidi</h3>
         <div class="contact-links">
           <a [href]="storeInfo.phoneHref">Chiama {{ storeInfo.phone }}</a>
-          <a [href]="storeInfo.whatsappLink" target="_blank" rel="noopener">
-            WhatsApp
-          </a>
+          <a [href]="storeInfo.whatsappLink" target="_blank" rel="noopener"> WhatsApp </a>
           <a [href]="'mailto:' + storeInfo.email">{{ storeInfo.email }}</a>
         </div>
       </div>
